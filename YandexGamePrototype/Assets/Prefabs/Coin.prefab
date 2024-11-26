@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b603113580fe0f8469d575cb249c87e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinEffectPrefab: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}
   rotationSpeed: 80
 --- !u!135 &4967998624476141532
 SphereCollider:
