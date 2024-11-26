@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject startMenu;
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] GameObject finishWindow;
+    [SerializeField] CoinManager coinManager;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
+        coinManager.SaveToProgress();
         int next = SceneManager.GetActiveScene().buildIndex + 1;
         if(next < SceneManager.sceneCountInBuildSettings) SceneManager.LoadScene(next);
     }

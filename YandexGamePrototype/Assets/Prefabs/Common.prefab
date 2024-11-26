@@ -1149,6 +1149,53 @@ Transform:
   - {fileID: 1107884451796808003}
   m_Father: {fileID: 2828843425188844093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4188148985595856692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 648025671007216410}
+  - component: {fileID: 6178286912592306578}
+  m_Layer: 0
+  m_Name: Progress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &648025671007216410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4188148985595856692}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2828843425188844093}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6178286912592306578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4188148985595856692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e84f4bf905381499960f6ff267aec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: 0
+  width: 0
+  height: 0
 --- !u!1 &4394249188439595436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,6 +2185,7 @@ MonoBehaviour:
   startMenu: {fileID: 3590631425483327863}
   levelText: {fileID: 3914622484302006394}
   finishWindow: {fileID: 254742978489561878}
+  coinManager: {fileID: 3983743948867552256}
 --- !u!1 &6787570352714679767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,6 +2342,7 @@ Transform:
   - {fileID: 2746740698407274951}
   - {fileID: 4309945617781237406}
   - {fileID: 2233361006852101403}
+  - {fileID: 648025671007216410}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7943590796051821404
@@ -2551,5 +2600,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f5427da20e80f4a83de1543dd523df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfCoinsInLevel: 0
+  numberOfCoins: 0
   coinNumberText: {fileID: 934013789925312148}
