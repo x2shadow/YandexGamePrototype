@@ -24,4 +24,10 @@ public class CoinManager : MonoBehaviour
     {
         Progress.Instance.coins = numberOfCoins;
     }
+
+    public void SpendMoney(int value)
+    {
+        numberOfCoins -= value;
+        coinNumberText.text = numberOfCoins.ToString();
+    }
 }

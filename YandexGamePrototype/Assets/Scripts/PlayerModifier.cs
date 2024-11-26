@@ -16,6 +16,12 @@ public class PlayerModifier : MonoBehaviour
     float widthMultiplier = 0.0005f;
     float heightMultiplier = 0.01f;
 
+    void Start()
+    {
+        SetWidth(Progress.Instance.width);
+        SetHeight(Progress.Instance.height);
+    }
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.A)) AddWidth(20);
@@ -38,6 +44,17 @@ public class PlayerModifier : MonoBehaviour
     public void AddHeight(int value)
     {
         height += value;
+    }
+
+    public void SetWidth(int value)
+    {
+        width = value;
+        renderer.material.SetFloat("_PushValue", width * widthMultiplier);
+    }
+
+    public void SetHeight(int value)
+    {
+        height = value;
     }
 
     public void HitBarrier()
