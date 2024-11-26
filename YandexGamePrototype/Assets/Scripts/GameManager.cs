@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject startMenu;
     [SerializeField] TextMeshProUGUI levelText;
+    [SerializeField] GameObject finishWindow;
 
     void Start()
     {
@@ -18,5 +19,16 @@ public class GameManager : MonoBehaviour
     {
         startMenu.SetActive(false);
         FindObjectOfType<PlayerBehaviour>().Play();
+    }
+
+    public void NextLevel()
+    {
+        int next = SceneManager.GetActiveScene().buildIndex + 1;
+        if(next < SceneManager.sceneCountInBuildSettings) SceneManager.LoadScene(next);
+    }
+
+    public void ShowFinishWindow()
+    {
+        finishWindow.SetActive(true);
     }
 }
