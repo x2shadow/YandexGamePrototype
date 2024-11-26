@@ -38,6 +38,23 @@ public class PlayerModifier : MonoBehaviour
     public void AddHeight(int value)
     {
         height += value;
+    }
 
+    public void HitBarrier()
+    {
+        if(height > 0)
+        {
+            AddHeight(-50);
+        }
+        else if (width > 0)
+        {
+            AddWidth(-50);
+        }
+        else Die();
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }

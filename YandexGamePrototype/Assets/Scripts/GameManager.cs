@@ -9,5 +9,6 @@ public class GameManager : MonoBehaviour
     public void Play()
     {
         startMenu.SetActive(false);
+        FindObjectOfType<PlayerBehaviour>().Play();
     }
 }

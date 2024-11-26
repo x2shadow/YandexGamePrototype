@@ -8,6 +8,6 @@ public class CameraMovement : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = target.position;
+        if(target) transform.position = target.position;
     }
 }
