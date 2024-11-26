@@ -14,10 +14,12 @@ public class PreFinishBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Slowly change x to final position
         float x = Mathf.MoveTowards(transform.position.x, 0, Time.deltaTime * 2f);
         float z = transform.position.z + 3f * Time.deltaTime;
         transform.position = new Vector3(x, 0, z);
 
+        // Slowly change rotation
         float rotation = Mathf.MoveTowardsAngle(transform.eulerAngles.y, 0, Time.deltaTime * 100f);
         transform.localEulerAngles = new Vector3(0, rotation, 0);
     }
