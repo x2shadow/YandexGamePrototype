@@ -7,6 +7,7 @@ public class PlayerModifier : MonoBehaviour
     [SerializeField] new Renderer renderer;
     [SerializeField] Transform colliderTranform;
     [SerializeField] AudioSource pumpSound;
+    [SerializeField] AudioSource shrinkSound;
 
     [SerializeField] Transform topSpine;
     [SerializeField] Transform bottomSpine;
@@ -40,13 +41,13 @@ public class PlayerModifier : MonoBehaviour
     {
         width += value;
         renderer.material.SetFloat("_PushValue", width * widthMultiplier);
-        if (value > 0) pumpSound.Play();
+        if (value > 0) pumpSound.Play(); else shrinkSound.Play();
     }
 
     public void AddHeight(int value)
     {
         height += value;
-        if (value > 0) pumpSound.Play();
+        if (value > 0) pumpSound.Play(); else shrinkSound.Play();
     }
 
     public void SetWidth(int value)
