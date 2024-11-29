@@ -11,21 +11,5 @@ mergeInto(LibraryManager.library, {
 
     myGameInstance.SendMessage("Yandex", "SetName",  player.getName());
     myGameInstance.SendMessage("Yandex", "SetPhoto", player.getPhoto("medium"));
-
-  },
-    RateGame: function () {
-    console.log("Rate game!");
-    
-    ysdk.feedback.canReview()
-    .then(({ value, reason }) => {
-        if (value) {
-            ysdk.feedback.requestReview()
-                .then(({ feedbackSent }) => {
-                    console.log(feedbackSent);
-                })
-        } else {
-            console.log(reason)
-        }
-    })
   },
 });
