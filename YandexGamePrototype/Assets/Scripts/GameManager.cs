@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject startMenu;
+    [SerializeField] GameObject yandexDebugMenu;
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] GameObject finishWindow;
     [SerializeField] CoinManager coinManager;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     public void Play()
     {
         startMenu.SetActive(false);
+        yandexDebugMenu.SetActive(false);
         FindObjectOfType<PlayerBehaviour>().Play();
     }
 
