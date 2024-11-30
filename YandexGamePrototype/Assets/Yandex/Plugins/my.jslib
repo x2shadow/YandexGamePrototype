@@ -41,4 +41,11 @@ mergeInto(LibraryManager.library, {
       myGameInstance.SendMessage("Progress", "SetPlayerInfo", myJSON);
     })
   },
+
+  SetToLeaderboard : function (value) {
+    ysdk.getLeaderboards()
+      .then(lb => {
+        lb.setLeaderboardScore("Height", value);
+      })
+  },
 });

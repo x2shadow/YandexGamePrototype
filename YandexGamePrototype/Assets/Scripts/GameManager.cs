@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] GameObject finishWindow;
     [SerializeField] CoinManager coinManager;
+
+    [DllImport("__Internal")] private static extern void SetToLeaderboard(int value);
 
     void Start()
     {
@@ -42,6 +45,7 @@ public class GameManager : MonoBehaviour
             Progress.Instance.playerInfo.level = SceneManager.GetActiveScene().buildIndex;
             if(Progress.Instance.playerInfo.level == 2) Progress.Instance.playerInfo.level = 0;
             Progress.Instance.Save();
+            SetToLeaderboard(Progress.Instance.playerInfo.height);
         #endif
         finishWindow.SetActive(true);
     }
