@@ -44,7 +44,9 @@ public class Progress : MonoBehaviour
 
     void Start()
     {
-        LoadExtern();
+        #if !UNITY_EDITOR
+            LoadExtern();
+        #endif
     }
 
     public void Save()

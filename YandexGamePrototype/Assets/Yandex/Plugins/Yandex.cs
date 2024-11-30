@@ -27,7 +27,9 @@ public class Yandex : MonoBehaviour
 
     public void buttonRateGame()
     {
-        RateGame();
+        #if !UNITY_EDITOR
+            RateGame();
+        #endif
     }
 
     public void SetName(string name)

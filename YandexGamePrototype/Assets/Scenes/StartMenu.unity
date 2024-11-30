@@ -567,7 +567,7 @@ MonoBehaviour:
     width: 0
     height: 0
     level: 0
-  playerInfoText: {fileID: 0}
+  playerInfoText: {fileID: 24136440}
 --- !u!4 &725334038
 Transform:
   m_ObjectHideFlags: 0

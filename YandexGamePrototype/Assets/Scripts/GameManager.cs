@@ -19,7 +19,9 @@ public class GameManager : MonoBehaviour
 
     public void Play()
     {
-        Progress.Instance.Save();
+        #if !UNITY_EDITOR
+            Progress.Instance.Save();
+        #endif
         startMenu.SetActive(false);
         yandexDebugMenu.SetActive(false);
         FindObjectOfType<PlayerBehaviour>().Play();
@@ -34,8 +36,10 @@ public class GameManager : MonoBehaviour
 
     public void ShowFinishWindow()
     {
-        Progress.Instance.playerInfo.level = SceneManager.GetActiveScene().buildIndex;
-        Progress.Instance.Save();
+        #if !UNITY_EDITOR
+            Progress.Instance.playerInfo.level = SceneManager.GetActiveScene().buildIndex;
+            Progress.Instance.Save();
+        #endif
         finishWindow.SetActive(true);
     }
 }
