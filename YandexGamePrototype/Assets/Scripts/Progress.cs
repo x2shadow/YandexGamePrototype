@@ -7,6 +7,7 @@ public class Progress : MonoBehaviour
     public int coins;
     public int width;
     public int height;
+    public int level;
 
     public static Progress Instance;
 
