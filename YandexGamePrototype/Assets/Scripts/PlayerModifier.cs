@@ -42,12 +42,14 @@ public class PlayerModifier : MonoBehaviour
         width += value;
         renderer.material.SetFloat("_PushValue", width * widthMultiplier);
         if (value > 0) pumpSound.Play(); else shrinkSound.Play();
+        Progress.Instance.playerInfo.width = width;
     }
 
     public void AddHeight(int value)
     {
         height += value;
         if (value > 0) pumpSound.Play(); else shrinkSound.Play();
+        Progress.Instance.playerInfo.height = height;
     }
 
     public void SetWidth(int value)

@@ -29,15 +29,18 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        coinManager.SaveToProgress();
         int next = SceneManager.GetActiveScene().buildIndex + 1;
+        if (next == 3) next = 1;
         if(next < SceneManager.sceneCountInBuildSettings) SceneManager.LoadScene(next);
     }
 
     public void ShowFinishWindow()
     {
+        coinManager.SaveToProgress();
+        
         #if !UNITY_EDITOR
             Progress.Instance.playerInfo.level = SceneManager.GetActiveScene().buildIndex;
+            if(Progress.Instance.playerInfo.level == 2) Progress.Instance.playerInfo.level = 0;
             Progress.Instance.Save();
         #endif
         finishWindow.SetActive(true);
