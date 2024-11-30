@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     public void Play()
     {
+        Progress.Instance.Save();
         startMenu.SetActive(false);
         yandexDebugMenu.SetActive(false);
         FindObjectOfType<PlayerBehaviour>().Play();
@@ -33,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     public void ShowFinishWindow()
     {
+        Progress.Instance.playerInfo.level = SceneManager.GetActiveScene().buildIndex;
+        Progress.Instance.Save();
         finishWindow.SetActive(true);
     }
 }

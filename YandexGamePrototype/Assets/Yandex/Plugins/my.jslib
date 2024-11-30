@@ -28,4 +28,17 @@ mergeInto(LibraryManager.library, {
             }
         })
   },
+
+  SaveExtern: function (data) {
+    var dataString = UTF8ToString(data);
+    var myobj = JSON.parse(dataString);
+    player.setData(myobj);
+  },
+
+  LoadExtern: function () {
+    player.getData().then(data => {
+      const myJSON = JSON.stringify(data);
+      myGameInstance.SendMessage("Progress", "SetPlayerInfo", myJSON);
+    })
+  },
 });
