@@ -10,7 +10,7 @@ public class CoinManager : MonoBehaviour
     
     void Start()
     {
-        numberOfCoins = Progress.Instance.coins;
+        numberOfCoins = Progress.Instance.playerInfo.coins;
         coinNumberText.text = numberOfCoins.ToString();
     }
     
@@ -22,7 +22,7 @@ public class CoinManager : MonoBehaviour
 
     public void SaveToProgress()
     {
-        Progress.Instance.coins = numberOfCoins;
+        Progress.Instance.playerInfo.coins = numberOfCoins;
     }
 
     public void SpendMoney(int value)

@@ -7,6 +7,6 @@ public class StartMenu : MonoBehaviour
 {
     public void buttonStart()
     {
-        SceneManager.LoadScene(Progress.Instance.level + 1);
+        SceneManager.LoadScene(Progress.Instance.playerInfo.level + 1);
     }
 }

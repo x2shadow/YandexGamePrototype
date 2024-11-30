@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Progress : MonoBehaviour
+[System.Serializable]
+public class PlayerInfo
 {
     public int coins;
     public int width;
     public int height;
     public int level;
+}
+
+public class Progress : MonoBehaviour
+{
+    public PlayerInfo playerInfo;
 
     public static Progress Instance;
 
@@ -23,5 +29,10 @@ public class Progress : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
+
     }
 }
